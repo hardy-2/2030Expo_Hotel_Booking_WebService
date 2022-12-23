@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: korea-azurefile
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: my-azurefile
+  resources:
+    requests:
+      storage: 30Gi

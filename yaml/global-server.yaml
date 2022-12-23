@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: global-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: global
+  template:
+    metadata:
+      labels:
+        app: global
+    spec:
+      containers:
+      - image: lch7087/web-global:v1
+        name:  sky-global
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 200m
+        readinessProbe:
+          exec:
+            command:
+            - ls
+            - /home/qloapps/www/global
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 5
+          timeoutSeconds: 5
+          periodSeconds: 10
+        volumeMounts:
+        - mountPath: "/var/log/apache2"
+          name: volume
+      volumes:
+      - name: volume
+        persistentVolumeClaim:
+          claimName: global-azurefile       
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: global-server-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: global
+  ports:
+  - port: 80
+    targetPort: 80

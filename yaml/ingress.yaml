@@ -1,0 +1,59 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress1
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+spec:
+  tls:
+   - hosts:
+     secretName: sky-secret
+  rules:
+  - http:
+      paths:
+      - path: /korea
+        backend:
+          service:
+            name: korea-server-svc
+            port:
+              number: 80
+        pathType: Prefix
+      - path: /global
+        backend:
+          service:
+            name: global-server-svc
+            port:
+              number: 80
+        pathType: Prefix
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress2
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+    appgw.ingress.kubernetes.io/override-frontend-port: "50005"
+spec:
+  tls:
+   - hosts:
+     secretName: sky-secret
+  rules:
+  - http:
+      paths:
+      - path: /korea
+        backend:
+          service:
+            name: admin-korea-server-svc
+            port:
+              number: 80
+        pathType: Prefix
+  - http:
+      paths:
+      - path: /global
+        backend:
+          service:
+            name: admin-global-server-svc
+            port:
+              number: 80
+        pathType: Prefix

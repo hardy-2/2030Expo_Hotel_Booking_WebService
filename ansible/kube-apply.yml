@@ -1,0 +1,26 @@
+---
+- hosts: localhost
+  become: yes
+  become_user: skyuser
+  gather_facts: false
+  vars:
+    yaml_file_path: /home/skyuser/yaml
+    yaml_file:
+      - sc.yaml
+      - korea-pvc.yaml
+      - global-pvc.yaml
+      - korea-hpa.yaml
+      - global-hpa.yaml
+      - ingress.yaml
+      - korea-server.yaml
+      - global-server.yaml
+      - admin-global-server.yaml
+      - admin-korea-server.yaml
+
+  tasks:
+    - name: kubectl apply
+      shell: kubectl apply -f {{ item }}
+      args:
+        chdir: "{{ yaml_file_path }}"
+      loop: "{{ yaml_file }}"
+...

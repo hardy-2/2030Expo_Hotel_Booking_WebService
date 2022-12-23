@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  become: yes
+  become_user: skyuser
+  vars:
+    yaml_file_path: /home/skyuser/yaml
+
+  tasks:
+    - name: helm-install datadog-agent
+      shell: helm install datadog-agent -f datadog-values.yaml datadog/datadog
+      args:
+        chdir: "{{ yaml_file_path }}"
+...

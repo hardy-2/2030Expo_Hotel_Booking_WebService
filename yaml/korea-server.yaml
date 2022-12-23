@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: korea-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: korea
+  template:
+    metadata:
+      labels:
+        app: korea
+    spec:
+      containers:
+      - image: lch7087/web-kor:v1
+        name:  sky-korea
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 200m
+        readinessProbe:
+          exec:
+            command:
+            - ls
+            - /home/qloapps/www/korea
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 5
+          timeoutSeconds: 5
+          periodSeconds: 10
+        volumeMounts:
+        - mountPath: "/var/log/apache2"
+          name: volume
+      volumes:
+      - name: volume
+        persistentVolumeClaim:
+          claimName: korea-azurefile   
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: korea-server-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: korea
+  ports:
+  - port: 80
+    targetPort: 80

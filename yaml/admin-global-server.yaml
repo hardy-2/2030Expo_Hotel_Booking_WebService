@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-global-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin-global
+  template:
+    metadata:
+      labels:
+        app: admin-global
+    spec:
+      containers:
+      - image: lch7087/admin-global:v1
+        name:  sky-admin-global
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 200m
+        readinessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        volumeMounts:
+        - mountPath: "/var/log/apache2"
+          name: volume
+      volumes:
+      - name: volume
+        persistentVolumeClaim:
+          claimName: korea-azurefile
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: admin-global-server-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: admin-global
+  ports:
+  - port: 80
+    targetPort: 80

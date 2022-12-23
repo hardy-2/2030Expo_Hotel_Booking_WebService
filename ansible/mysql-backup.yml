@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  become: yes
+  vars:
+    mysql_db_name:  #azure database name
+  tasks:
+    - name: import file.sql
+      shell: | 
+        mysql -h {{ mysql_db_name }} -u #user -p#passwd korea < korea.sql
+        mysql -h {{ mysql_db_name }} -u #user -p#passwd global < global.sql
+      args:
+        chdir: /home/skyuser/sql
+...

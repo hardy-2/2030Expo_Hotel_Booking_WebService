@@ -1,0 +1,78 @@
+targetSystem: "linux"
+datadog:
+  apiKey: #apikey
+  appKey: #appkey
+  clusterName: #aks의 name
+  tags: []
+  kubelet:
+    host:
+      valueFrom:
+        fieldRef:
+          fieldPath: spec.nodeName
+    hostCAPath: /etc/kubernetes/certs/kubeletserver.crt
+    tlsVerify: false # Required as of Agent 7.35 because Kubelet certificates in AKS do not have a Subject Alternative Name (SAN) set.
+  
+  #log 에이전트를 활성화하여 수집
+  logs:
+    enabled: true
+    #모든 컨테이너에 대해 로그를 수집할지의 여부 
+    containerCollectAll: true
+    #일반적으로 로그를 수집하는 가장 효율적인 방법
+  #apm 에이전트 사용 및 사용자 지정 구성
+  apm:
+    #TCP를 통한 추적을 허용
+    portEnabled: true
+    port: 8126
+    socketPath: /var/run/datadog/apm.socket
+    hostSocketPath: /var/run/datadog/
+  #프로세스를 수집
+  processAgent:
+    enabled: true
+    processCollection: true
+    stripProcessArguments: true
+    processDiscovery: true
+
+  systemProbe:
+    enableTCPQueueLength: false
+    enableOOMKill: true
+    collectDNSStats: false
+  
+  networkMonitoring:
+    enabled: true
+  
+  serviceMonitoring:
+    enabled: true
+  
+
+clusterAgent:
+  # clusterAgent.enabled -- Set this to false to disable Datadog Cluster Agent
+  enabled: true
+  # clusterAgent.shareProcessNamespace -- Set the process namespace sharing on the Datadog Cluster Agent
+  shareProcessNamespace: false
+  ## Define the Datadog Cluster-Agent image to work with
+  image:
+    # clusterAgent.image.name -- Cluster Agent image name to use (relative to `registry`)
+    name: cluster-agent
+    # clusterAgent.image.tag -- Cluster Agent image tag to use
+    tag: 7.40.1
+    # clusterAgent.image.digest -- Cluster Agent image digest to use, takes precedence over tag if specified
+    digest: ""
+    # clusterAgent.image.repository -- Override default registry + image.name for Cluster Agent
+    repository:
+    # clusterAgent.image.pullPolicy -- Cluster Agent image pullPolicy
+    pullPolicy: IfNotPresent
+    # clusterAgent.image.pullSecrets -- Cluster Agent repository pullSecret (ex: specify docker registry credentials)
+    ## See https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
+    pullSecrets: []
+    #   - name: "<REG_SECRET>"
+    # clusterAgent.image.doNotCheckTag -- Skip the version and chart compatibility check
+
+    ## By default, the version passed in clusterAgent.image.tag is checked
+    ## for compatibility with the version of the chart.
+    ## This boolean permits completely skipping this check.
+    ## This is useful, for example, for custom tags that are not
+    ## respecting semantic versioning.
+    doNotCheckTag:  # false
+  
+  replicas: 2
+  createPodDisruptionBudget: true
