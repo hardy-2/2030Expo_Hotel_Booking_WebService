@@ -10,3 +10,4 @@
 ## CI/CD Architecture
 
 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2df22473-6394-4e7f-866f-8cbb7e977778/Untitled.png)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ccb717fc-4bd9-4623-a2a9-a3296289eb31/Untitled.png)
