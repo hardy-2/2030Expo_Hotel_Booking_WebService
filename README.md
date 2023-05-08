@@ -158,13 +158,23 @@ Ansible 파이프라인
 ![site1](https://user-images.githubusercontent.com/73948888/236822326-53aa2442-edbd-4616-96f7-f551f3b5ec00.png)
 한국과 글로벌 관리자 페이지(포트 변경)
 
-![특정 IP로만 관리자 페이지에 접속할 수 있도록 지정](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/85144f10-48b1-4963-9abf-059bc4bc85ce/Untitled.png)
-
+![site2](https://user-images.githubusercontent.com/73948888/236822329-9127e061-ef32-46a6-b6fe-fd2b3f6d6902.png)
 특정 IP로만 관리자 페이지에 접속할 수 있도록 지정
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4e8c6d31-c270-4f36-9047-d94552ec9709/Untitled.png)
-
-![site1](https://user-images.githubusercontent.com/73948888/236822326-53aa2442-edbd-4616-96f7-f551f3b5ec00.png)
-![site2](https://user-images.githubusercontent.com/73948888/236822329-9127e061-ef32-46a6-b6fe-fd2b3f6d6902.png)
 ![site3](https://user-images.githubusercontent.com/73948888/236822332-face68a8-0ad5-45bc-ba34-6044347ef715.png)
+
+### 모니터링
+
+![monitor1](https://user-images.githubusercontent.com/73948888/236823188-9500aa62-c2a9-4948-8d80-1abf7cf231a4.png)
+![monitor2](https://user-images.githubusercontent.com/73948888/236823192-ddac491f-2ee9-4209-b196-911ce57c6899.png)
+![monitor3](https://user-images.githubusercontent.com/73948888/236823195-2201866d-abc5-4086-8a99-0a33f911185c.png)
+![monitor4](https://user-images.githubusercontent.com/73948888/236823197-794bba8e-7d0b-4e44-9261-fe3446179841.png)
+
+## 😀 시연 영상
+
+[CI/CD 파이프라인](https://www.youtube.com/watch?v=Ea_pYwdn_A0&ab_channel=%EC%9D%B4%EC%B0%BD%ED%9D%AC)
+
+CI/CD 파이프라인
+
+[https://www.youtube.com/watch?v=XTS04REfvnA](https://www.youtube.com/watch?v=XTS04REfvnA)
 
