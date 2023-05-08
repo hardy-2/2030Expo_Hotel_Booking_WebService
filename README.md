@@ -147,3 +147,21 @@ Ansible 파이프라인
 - 사용자 중심의 서비스 단위 모니터링
     - slack으로 알림
 - 쿠버네티스 로그, 네트워크, 프로세스 수집
+
+## 😀 시연 사진
+
+### 웹 서비스
+
+![한국 서비스 웹페이지/글로벌 서비스 웹페이지](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f6514bff-4ab0-4744-bcde-4cddde8d3541/Untitled.png)
+
+한국 서비스 웹페이지/글로벌 서비스 웹페이지
+
+![한국과 글로벌 관리자 페이지(포트 변경)](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fefae31b-cd38-4205-956f-3497f9b92aed/Untitled.png)
+
+한국과 글로벌 관리자 페이지(포트 변경)
+
+![특정 IP로만 관리자 페이지에 접속할 수 있도록 지정](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/85144f10-48b1-4963-9abf-059bc4bc85ce/Untitled.png)
+
+특정 IP로만 관리자 페이지에 접속할 수 있도록 지정
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4e8c6d31-c270-4f36-9047-d94552ec9709/Untitled.png)
