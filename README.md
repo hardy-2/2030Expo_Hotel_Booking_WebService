@@ -152,7 +152,7 @@ Ansible 파이프라인
 
 ### 웹 서비스
 
-![한국 서비스 웹페이지/글로벌 서비스 웹페이지](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f6514bff-4ab0-4744-bcde-4cddde8d3541/Untitled.png)
+![한국 서비스 웹페이지/글로벌 서비스 웹페이지]![site](https://user-images.githubusercontent.com/73948888/236822320-cf48b2d9-c3d3-4f5a-9c22-937be0385a3b.png)
 
 한국 서비스 웹페이지/글로벌 서비스 웹페이지
 
@@ -165,3 +165,8 @@ Ansible 파이프라인
 특정 IP로만 관리자 페이지에 접속할 수 있도록 지정
 
 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4e8c6d31-c270-4f36-9047-d94552ec9709/Untitled.png)
+
+![site1](https://user-images.githubusercontent.com/73948888/236822326-53aa2442-edbd-4616-96f7-f551f3b5ec00.png)
+![site2](https://user-images.githubusercontent.com/73948888/236822329-9127e061-ef32-46a6-b6fe-fd2b3f6d6902.png)
+![site3](https://user-images.githubusercontent.com/73948888/236822332-face68a8-0ad5-45bc-ba34-6044347ef715.png)
+
