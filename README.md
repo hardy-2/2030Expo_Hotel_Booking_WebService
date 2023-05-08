@@ -172,9 +172,9 @@ Ansible 파이프라인
 
 ## 😀 시연 영상
 
-[CI/CD 파이프라인](https://www.youtube.com/watch?v=Ea_pYwdn_A0&ab_channel=%EC%9D%B4%EC%B0%BD%ED%9D%AC)
-
+[Terraform&Ansible](https://www.youtube.com/watch?v=Ea_pYwdn_A0&ab_channel=%EC%9D%B4%EC%B0%BD%ED%9D%AC)
 CI/CD 파이프라인
 
-[https://www.youtube.com/watch?v=XTS04REfvnA](https://www.youtube.com/watch?v=XTS04REfvnA)
+[웹서비스 시연 영상](https://www.youtube.com/watch?v=XTS04REfvnA)
+
 
