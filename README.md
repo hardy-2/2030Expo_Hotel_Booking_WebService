@@ -152,12 +152,10 @@ Ansible 파이프라인
 
 ### 웹 서비스
 
-![한국 서비스 웹페이지/글로벌 서비스 웹페이지]![site](https://user-images.githubusercontent.com/73948888/236822320-cf48b2d9-c3d3-4f5a-9c22-937be0385a3b.png)
-
+![site](https://user-images.githubusercontent.com/73948888/236822320-cf48b2d9-c3d3-4f5a-9c22-937be0385a3b.png)
 한국 서비스 웹페이지/글로벌 서비스 웹페이지
 
-![한국과 글로벌 관리자 페이지(포트 변경)](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fefae31b-cd38-4205-956f-3497f9b92aed/Untitled.png)
-
+![site1](https://user-images.githubusercontent.com/73948888/236822326-53aa2442-edbd-4616-96f7-f551f3b5ec00.png)
 한국과 글로벌 관리자 페이지(포트 변경)
 
 ![특정 IP로만 관리자 페이지에 접속할 수 있도록 지정](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/85144f10-48b1-4963-9abf-059bc4bc85ce/Untitled.png)
